@@ -1,8 +1,12 @@
 package org.mail.test;
 
 import java.util.Date;
+
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
@@ -14,7 +18,7 @@ import javax.persistence.Transient;
 //(name="USER_DETAILS")
 @Table(name="USER_DETAILS")
 public class UserDetails {
-	@Id
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	//@Column(name="User_Id")
 	private int userId;
 	//@Column(name="User_Name")
@@ -22,22 +26,22 @@ public class UserDetails {
 	@Temporal(TemporalType.DATE)
 	private Date joingDate;
 	@Lob
-	private String address;
 	@Transient
 	private String description;
+	@Embedded
+	private Address address;
 	
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 	public Date getJoingDate() {
 		return joingDate;
 	}
 	public void setJoingDate(Date joingDate) {
 		this.joingDate = joingDate;
-	}
-	
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
 	}
 	
 	public String getDescription() {
