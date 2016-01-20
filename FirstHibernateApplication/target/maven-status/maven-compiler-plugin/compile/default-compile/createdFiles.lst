@@ -1,2 +1,4 @@
+org\mail\test\EmailAddress.class
 org\mail\hibernate\HibernateTest.class
+org\mail\test\Address.class
 org\mail\test\UserDetails.class

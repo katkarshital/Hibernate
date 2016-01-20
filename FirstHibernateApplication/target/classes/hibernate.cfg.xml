@@ -28,6 +28,8 @@
 		<property name="hbm2ddl.auto">create</property>
 
 		<mapping class="org.mail.test.UserDetails" />
+		<mapping class="org.mail.test.Address" />
+		<mapping class="org.mail.test.EmailAddress" />
 
 	</session-factory>
 
