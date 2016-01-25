@@ -1,6 +1,7 @@
 package com.my.data;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -10,6 +11,7 @@ public class Student {
 	private String subject;
 	private int marks;
 	@OneToOne
+	@JoinColumn(name = "vehicle_id")
 	private Vehicle vehicle;
 	
 	public Vehicle getVehicle() {

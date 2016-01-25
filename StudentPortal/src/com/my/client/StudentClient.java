@@ -21,9 +21,9 @@ public class StudentClient {
 		Session session = sessionFact.openSession();
 		
 		session.beginTransaction();
-		
-		session.save(studObj);
 		session.save(vehicle);
+		session.save(studObj);
+
 		session.getTransaction().commit();
 		
 		session.close();
